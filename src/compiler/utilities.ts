@@ -6105,6 +6105,10 @@ namespace ts {
         return base ? `${base}/${options.jsx === JsxEmit.ReactJSXDev ? "jsx-dev-runtime" : "jsx-runtime"}` : undefined;
     }
 
+    export function getMetadataDecoratorImportBase(compilerOptions: CompilerOptions): string | undefined {
+        return compilerOptions.metadataDecoratorImportSource;
+    }
+
     export function hasZeroOrOneAsteriskCharacter(str: string): boolean {
         let seenAsterisk = false;
         for (let i = 0; i < str.length; i++) {
